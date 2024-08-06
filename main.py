@@ -1,49 +1,35 @@
-from classes import*
-from views import*
+from classes import *
+from views import *
+from funcao import *
+
 
 dog = []
 rcs =["Vira-lata", "Shih Tzu", "Yorkshire", "Poodle", "Buldogue Francês", "Pinscher"]
-
-human = []
-
-def rc():
-  
-  for i in(rcs):
-    print(f"{i}")
-
-def criar_cao():
-        nome = input("DEFINA UM NOME AO CÃO:")
-        rc()
-        raca = input("ESCOLHA UMA RAÇA:")
-        tamanho = input("QUAL TAMANHO:")
-        cor = input("DEFINA UMA COR:")
-        cao = Dog(nome,tamanho, raca, cor)
-        dog.append(cao) 
-        
-      
-def criar_humano():
-    
-        nome = input("DEFINA UM NOME:")
-        sexo = input("DEFINA O SEXO:")
-        idade = input("DEFINA UMA IDADE:")
-        hm = Humano(nome, sexo, idade)
-        human.append(hm)
-
-        return menu
-# def sair():
-#         print("SAIIIIIIIIR")
-    
+hms = []
 
 while True:
     print(menu())
+    # print(menu_dog())
     op = input("INFORME SUA OPÇÃO:")
+    # os.system("cls")
     if op == "1":
-        criar_cao()
-        
-
-    elif op == "2":
-        criar_humano()
+        dog.append(criar_cao(rcs))
+       # print(dog())
     
-    # elif op == "3":
-    #     sair()
+    elif op == "2":
+        hms.append(criar_humano(hms))
+
+        
+    elif op == "3":
+         listar_dog(dog)
+        #  print(menu_dog())
+        #  print(listar_dog)
+
+        #  listar_hms(
+    elif op == "4":
+         listar_hms(hms)
+
+    elif op == "0":
+         sair()
+         break
 
